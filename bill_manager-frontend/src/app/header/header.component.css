@@ -1,0 +1,29 @@
+#header-btns button{
+    margin: 0px 5px 0px 0px;
+}
+
+#btn-home {
+    font-size: 18px;
+}
+
+.ipt_search {
+    font-size: 15px;
+    color: #5e5eef;
+    right: 0;
+    left: unset !important;
+}
+
+.box-main-content {
+    box-shadow: 0px 10px 10px grey;
+    padding: 10px;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
+mat-sidenav-content > button {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}

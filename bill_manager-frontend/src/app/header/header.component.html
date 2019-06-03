@@ -1,0 +1,45 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened">
+    Sidebat content
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-button color="primary" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!opened">arrow_forward_ios</mat-icon>
+    </button>
+    <mat-toolbar [style.height]="'75px'">
+      <div class="container">
+        <mat-grid-list cols="12" rowHeight="fit" [style.height]="'70px'">
+          <mat-grid-tile [colspan]="5" [rowspan]="1">
+            <button id="btn-home" mat-button routerLink="/home">Home</button>
+            <div id='header-btns'>
+                <!-- MENU ITEM - START -->
+                <button mat-raised-button [matMenuTriggerFor]="years_itens">Período</button><!-- routerLink="/project" -->
+
+                <mat-menu #years_itens="matMenu">
+                  <button mat-menu-item [matMenuTriggerFor]="months_itens" *ngFor="let y of years" (mouseleave)="selectedYear(y)">{{y}}</button>
+                </mat-menu>
+
+                <mat-menu #months_itens="matMenu">
+                  <button mat-menu-item *ngFor="let m of months; index as i" (click)="redirectTo(m)">{{m}}</button>
+                </mat-menu>
+                <!-- MENU ITEM - END -->
+                <button mat-raised-button routerLink="/notes">Notes</button>
+                <button mat-raised-button routerLink="/about">About</button>
+                <button mat-raised-button routerLink="/contact">Contact</button>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="3" [rowspan]="1" class="ipt_search">
+            <mat-form-field>
+              <input matInput maxlength="100" placeholder="search">
+              <mat-icon matSuffix>search</mat-icon>
+              <mat-hint>Search for Anything!</mat-hint>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-toolbar>
+    <div class="container box-main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,26 @@
+<mat-tab-group>
+    <mat-tab *ngFor="let m of months" [label]="m">
+        <mat-expansion-panel class="exp_panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Personal data
+            </mat-panel-title>
+            <mat-panel-description>
+              Type your name and age
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <input matInput placeholder="First name">
+          </mat-form-field>
+        </mat-expansion-panel>
+    </mat-tab>
+    <mat-tab disabled *ngIf="canAdd">
+        <ng-template mat-tab-label>
+            <button mat-icon-button (click)="addMonth()">
+                <mat-icon>add_circle</mat-icon>
+            </button>
+        </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+  
