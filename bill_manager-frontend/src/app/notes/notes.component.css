@@ -1,3 +1,7 @@
-.exp_panel{
+.exp_panel {
     margin: 40px 60px;
+}
+
+#form > mat-form-field{
+    width: 90% !important;
 }
