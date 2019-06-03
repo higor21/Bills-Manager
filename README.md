@@ -10,3 +10,7 @@ frontend:
 
 ### Some Functionalities
 
+- save payment details of each month
+- create an own account
+- see statistics about your money
+- and so on
