@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { NotesComponent } from './notes/notes.component';
 import { BillsComponent } from './bills/bills.component';
 import { ToastrModule } from 'ngx-toastr';
+import { MonthlyBillComponent } from './bills/monthly-bill/monthly-bill.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ToastrModule } from 'ngx-toastr';
     ContactComponent,
     HomeComponent,
     NotesComponent,
-    BillsComponent
+    BillsComponent,
+    MonthlyBillComponent
   ],
   imports: [
     BrowserModule,

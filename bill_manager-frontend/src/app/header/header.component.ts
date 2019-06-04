@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../global.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-header',
@@ -15,13 +16,22 @@ export class HeaderComponent implements OnInit {
   currentYear: number
   currentMonth: number
 
-  constructor(private globalService: GlobalService) {
+  constructor(
+    private globalService: GlobalService,
+    private router: Router
+  ) {
     this.months = this.globalService.months
   } 
 
   redirectTo(m: string){
     this.currentMonth = this.months.indexOf(m)
-    //console.log(this.months[this.currentMonth] + ' de ' + this.years[this.currentYear])
+
+    this.globalService.setPeriod({
+      currentMonth: this.currentMonth, 
+      currentYear: this.currentYear
+    })
+    
+    this.router.navigate(['/bills'])
   }
 
   selectedYear(year: string){

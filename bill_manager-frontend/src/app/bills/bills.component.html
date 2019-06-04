@@ -1,5 +1,16 @@
 <mat-tab-group>
-  <mat-tab *ngFor="let m of months" label="m">
-    fdsfs
+
+  <app-monthly-bill></app-monthly-bill>
+
+  <app-monthly-bill
+    *ngFor="let m of months" [month]="m"
+  ></app-monthly-bill>
+  
+  <mat-tab disabled *ngIf="canAdd">
+      <ng-template mat-tab-label>
+          <button mat-icon-button (click)="addMonth()">
+              <mat-icon>add_circle</mat-icon>
+          </button>
+      </ng-template>
   </mat-tab>
 </mat-tab-group>
