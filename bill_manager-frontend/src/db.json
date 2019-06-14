@@ -1,0 +1,59 @@
+{
+    "years": [
+        {
+            "year": 2019,
+            "months": [
+                {
+                    "month": 0,
+                    "notes": ["primeira descrição do mês 1", " segunda descrição do mês 1"],
+                    "current_money": 800, 
+                    "debts": [
+                        {
+                            "description": "comprar de carro",
+                            "value": 5000
+                        },
+                        {
+                            "description": "pagamento da OI",
+                            "value": 30
+                        }
+                    ],
+                    "cashs": [
+                        {
+                            "description": "pensão",
+                            "value": 740
+                        },
+                        {
+                            "description": "bolsa",
+                            "value": 400
+                        }
+                    ]
+                },
+                {
+                    "month": 1, 
+                    "notes": ["primeira descrição do mês 2", " segunda descrição do mês 2"],
+                    "current_money": 820, 
+                    "debts": [
+                        {
+                            "description": "comprar de uma moto",
+                            "value": 500
+                        },
+                        {
+                            "description": "pagamento da TIM",
+                            "value": 30
+                        }
+                    ],
+                    "cashs": [
+                        {
+                            "description": "pensão de Valdir",
+                            "value": 740
+                        },
+                        {
+                            "description": "bolsa do mês",
+                            "value": 400
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

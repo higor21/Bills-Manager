@@ -1,11 +1,9 @@
-<mat-tab-group>
+<mat-tab-group [selectedIndex]="selectedTabMonth">
 
-  <app-monthly-bill></app-monthly-bill>
+  <mat-tab [label]="globalService.months[m.month]" *ngFor="let m of months">
+      <app-monthly-bill [month]="m" ></app-monthly-bill>
+  </mat-tab>
 
-  <app-monthly-bill
-    *ngFor="let m of months" [month]="m"
-  ></app-monthly-bill>
-  
   <mat-tab disabled *ngIf="canAdd">
       <ng-template mat-tab-label>
           <button mat-icon-button (click)="addMonth()">

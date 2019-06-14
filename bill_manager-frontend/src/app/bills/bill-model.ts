@@ -15,10 +15,13 @@ export class Bill {
     cashs: Cash[]
     current_money: number
     month: number
-    year: number
 
-    constructor(month: number, year: number){
+    constructor(month: number){
         this.month = month
-        this.year = year
     }
+}
+
+export interface Year {
+    year: number, 
+    months: Bill[]
 }

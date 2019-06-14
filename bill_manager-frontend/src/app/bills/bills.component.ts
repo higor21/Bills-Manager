@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalService } from '../global.service';
 import { ToastrService } from 'ngx-toastr';
 import { BillsService } from './bills.service';
-import { Bill } from './bill-model';
+import { Bill, Year } from './bill-model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-bills',
@@ -12,24 +13,36 @@ import { Bill } from './bill-model';
 export class BillsComponent implements OnInit {
 
   months: Bill[]
-
+  years: Year[]
+  selectedTabYear: number
+  selectedTabMonth: number
   canAdd: boolean
 
   constructor(
-    //private globalService: GlobalService,
+    private globalService: GlobalService,
     private toastr: ToastrService,
+    private route: ActivatedRoute,
     private bills_service: BillsService
   ){}
   
   addMonth(){
     if(this.months.length < 12){
-      this.months.push(new Bill(this.months.length, (new Date()).getFullYear()))
+      this.months.push(new Bill(this.months.length))
     }
     this.canAdd = this.months.length < 12
   }
   
   ngOnInit() {
-    this.months = this.bills_service.getMonths()
-    this.canAdd = this.months.length < 12
+    setInterval(() => {
+      this.months = this.globalService.data[0].months 
+      this.canAdd = this.months.length < 12
+    }, 50)
+
+    this.route
+      .queryParams
+      .subscribe(params => {
+        this.selectedTabMonth = params['month'] || (new Date()).getMonth();
+        this.selectedTabYear = 0/* params['year'] || (new Date()).getFullYear() */;
+      });
   }
 }

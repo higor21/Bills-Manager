@@ -16,6 +16,7 @@ import { NotesComponent } from './notes/notes.component';
 import { BillsComponent } from './bills/bills.component';
 import { ToastrModule } from 'ngx-toastr';
 import { MonthlyBillComponent } from './bills/monthly-bill/monthly-bill.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MonthlyBillComponent } from './bills/monthly-bill/monthly-bill.componen
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
-    FlexLayoutModule 
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

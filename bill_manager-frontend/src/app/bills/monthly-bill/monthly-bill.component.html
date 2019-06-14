@@ -1,23 +1,24 @@
-<mat-tab label="label">
-  <mat-expansion-panel class="exp_panel">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Annotations
-      </mat-panel-title>
-      <mat-panel-description>
-        Type your things you have to remember later
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    
-    <div id="form">
-        <mat-form-field>
-          <input matInput #description maxlength="90" placeholder="Description">
-          <mat-hint align="start"><strong>Don't disclose personal info</strong></mat-hint>
-          <mat-hint align="end">{{description.value.length}} / 90</mat-hint>
-        </mat-form-field>
-        <button mat-icon-button (click)="addNote()">
-            <mat-icon>add_circle_outline</mat-icon>
-        </button>
-    </div>
-  </mat-expansion-panel>
-</mat-tab>
+<mat-expansion-panel class="exp_panel">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Annotations
+    </mat-panel-title>
+    <mat-panel-description>
+      Type your things you have to remember later
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  
+  <div id="form">
+      <mat-form-field>
+        <input matInput #description maxlength="90" placeholder="Description">
+        <mat-hint align="start"><strong>Don't disclose personal info</strong></mat-hint>
+        <mat-hint align="end">{{description.value.length}} / 90</mat-hint>
+      </mat-form-field>
+      <button mat-icon-button (click)="addNote()">
+          <mat-icon>add_circle_outline</mat-icon>
+      </button>
+  </div>
+</mat-expansion-panel>
+
+
+

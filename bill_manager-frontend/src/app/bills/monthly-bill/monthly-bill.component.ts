@@ -20,7 +20,7 @@ export class MonthlyBillComponent implements OnInit {
   ngOnInit() {
     if(this.month){
       this.label = this.globalService.months[this.month.month]
-      console.log(this.label)
+      console.log(this.month)
     }
   }
 }
